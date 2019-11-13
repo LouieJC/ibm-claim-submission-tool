@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import {
   Header,
   HeaderName,
-  SkipToContent,
+  HeaderNavigation,
+  HeaderMenuItem,
   HeaderGlobalBar,
   HeaderGlobalAction,
+  SkipToContent,
 } from 'carbon-components-react/lib/components/UIShell';
+import Notification20 from '@carbon/icons-react/lib/notification/20';
 import UserAvatar20 from '@carbon/icons-react/lib/user--avatar/20';
+import AppSwitcher20 from '@carbon/icons-react/lib/app-switcher/20';
+import { Link } from 'react-router-dom';
+
 class AppHeader extends Component {
   constructor(props) {
     super(props);
@@ -15,12 +21,36 @@ class AppHeader extends Component {
   render() {
     return (
       <>
-        <Header aria-label="IBM ">
+        <Header aria-label="IBM " className="ibm_header_blue">
           <SkipToContent />
-          <HeaderName prefix="IBM">[Claim Submission Tool]</HeaderName>
+          <HeaderName element={Link} to="/" prefix="IBM" />
+          <HeaderNavigation aria-label="IBM">
+            <HeaderMenuItem element={Link} to="/cfo-requests">
+              Feed - CFO Request
+            </HeaderMenuItem>
+            <HeaderMenuItem>
+              Authors
+            </HeaderMenuItem>
+            <HeaderMenuItem/>
+            <HeaderMenuItem>
+              Explore
+            </HeaderMenuItem>
+            <HeaderMenuItem>
+              Blog
+            </HeaderMenuItem>
+            <HeaderMenuItem>
+              Contact
+            </HeaderMenuItem>
+          </HeaderNavigation>
           <HeaderGlobalBar>
+          <HeaderGlobalAction aria-label="Notifications">
+              <Notification20 />
+            </HeaderGlobalAction>
             <HeaderGlobalAction aria-label="User Avatar">
               <UserAvatar20 />
+            </HeaderGlobalAction>
+            <HeaderGlobalAction aria-label="App Switcher">
+              <AppSwitcher20 />
             </HeaderGlobalAction>
           </HeaderGlobalBar>
         </Header>

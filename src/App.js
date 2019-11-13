@@ -3,7 +3,7 @@ import { Content } from "carbon-components-react/lib/components/UIShell";
 import { Route, Switch } from "react-router-dom";
 
 import AppHeader from "./components/shared/Header";
-import SideNavigation from "./components/shared/SideNav";
+// import SideNavigation from "./components/shared/SideNav";
 import Faqs from "./components/shared/Faqs";
 import Footer from "./components/shared/Footer";
 
@@ -26,7 +26,7 @@ class App extends Component {
       <>
         <div className="App">
           <AppHeader />
-            <SideNavigation />
+            {/* <SideNavigation /> */}
             <Content>
               <Switch>
                 <Route exact path="/create-request" component={CreateRequest} />
